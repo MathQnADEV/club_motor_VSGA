@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="garden">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.10.3/dist/full.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="../assets/fontawesome/css/fontawesome.css"
+        />
+        <link rel="stylesheet" href="../assets/fontawesome/css/brands.css" />
+        <link rel="stylesheet" href="../assets/fontawesome/css/solid.css" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        <!-- component -->
+        <div
+            class="md:flex flex-col md:flex-row md:min-h-screen w-full fixed top-0 left-0 right-0"
+        >
+            <!-- SIDEBAR START -->
+            <div
+                @click.away="open = false"
+                class="flex flex-col w-full md:w-64 flex-shrink-0"
+                x-data="{ open: false }"
+            >
+                <div
+                    class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between"
+                >
+                    <a
+                        href="#"
+                        class="text-lg font-semibold tracking-widest uppercase rounded-lg"
+                    >
+                        <div class="hidden md:block lg:block">
+                            <img
+                                src="../assets/img/logo.png"
+                                alt=""
+                                class="hidden md:block lg:block rounded-full"
+                            />
+                        </div>
+                        <h2 class="text-center md:mt-10 md:hidden w-full">
+                            Asosiasi Klub Motor Bersatu Indonesia
+                        </h2>
+                    </a>
+
+                    <button
+                        class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+                        @click="open = !open"
+                    >
+                        <svg
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            class="w-6 h-6"
+                        >
+                            <path
+                                x-show="!open"
+                                fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                clip-rule="evenodd"
+                            ></path>
+                            <path
+                                x-show="open"
+                                fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav
+                    :class="{'block': open, 'hidden': !open}"
+                    class="flex-grow md:block px-4 pb-4 md:pb-0 shadow-md shadow-inner"
+                >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/index.html"
+                        >Home</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/gallery.html"
+                        >Gallery</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/event.html"
+                        >Event</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold x bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/klien.html"
+                        >Klien Kami</a
+                    >
+					                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold x bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/artikel.html"
+                        >Artikel</a
+                    >
+                    <!-- <div
+                        @click.away="open = false"
+                        class="relative"
+                        x-data="{ open: false }"
+                    >
+                        <button
+                            @click="open = !open"
+                            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        >
+                            <span>Login</span>
+                            <svg
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                :class="{'rotate-180': open, 'rotate-0': !open}"
+                                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div
+                            x-show="open"
+                            x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg"
+                        >
+                            <div
+                                class="px-2 py-2 rounded-md shadow dark-mode:bg-gray-800"
+                            >
+                                <a
+                                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white md:mt-0 hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                                    href="#"
+                                    >Sign Up</a
+                                >
+                                <a
+                                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white md:mt-0 hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                                    href="#"
+                                    >Sign In</a
+                                >
+                            </div>
+                        </div>
+                    </div> -->
+                </nav>
+            </div>
+            <!-- SIDEBAR START -->
+
+            <div class="h-screen" style="overflow-y: auto">
+                <!-- NAVBAR START -->
+                <img
+                    src="../assets/img/Asosiasi Klub Motor Bersatu Indonesia.png"
+                    alt=""
+                    class="w-full h-auto h-auto bg-cover flex justify-center"
+                />
+                <div class="shadow-md sticky top-0 z-40 -mx-6 bg-neutral">
+                    <div
+                        class="font-bold flex justify-between md:mx-6 p-4 px-8 sm:text-center text-[10px] text-nowrap md:text-sm text-white"
+                    >
+                        <a
+                            href="#profil"
+                            class="rounded-lg block md:px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Profil</a
+                        >
+                        <a
+                            href="#visi-misi"
+                            class="rounded-lg block md:px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Visi Misi</a
+                        >
+                        <a
+                            href="#produk"
+                            class="rounded-lg block md:px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Produk Kami</a
+                        >
+                        <a
+                            href="#kontak"
+                            class="rounded-lg block md:px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Kontak Kami</a
+                        >
+                        <a
+                            href="#about-us"
+                            class="rounded-lg block md:px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Tentang Kami</a
+                        >
+                    </div>
+                </div>
+                <!-- NAVBAR START -->
+                <!-- COVER START -->
+                <div
+                    class="hero min-h-screen"
+                    style="background-image: url('../assets/img/nav.png')"
+                >
+                    <div class="hero-overlay bg-opacity-60"></div>
+                    <div class="hero-content text-center text-neutral-content" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold">
+                                Asosiasi Klub Motor Bersatu Indonesia
+                            </h1>
+                            <p class="mb-5">
+                                Tersambung dalam kekuatan persaudaraan, Asosiasi
+                                Klub Motor Bersatu Indonesia melaju bersama
+                                menuju tujuan yang sama.
+                            </p>
+                            <button class="btn btn-primary">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- COVER START -->
+                <!-- PROFILE START -->
+                <div
+                    class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+                    id="profil"
+                >
+                    <div class="absolute inset-0 -z-10 overflow-hidden">
+                        <svg
+                            class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+                            aria-hidden="true"
+                        >
+                            <defs>
+                                <pattern
+                                    id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+                                    width="200"
+                                    height="200"
+                                    x="50%"
+                                    y="-1"
+                                    patternUnits="userSpaceOnUse"
+                                >
+                                    <path
+                                        d="M100 200V.5M.5 .5H200"
+                                        fill="none"
+                                    />
+                                </pattern>
+                            </defs>
+                            <svg
+                                x="50%"
+                                y="-1"
+                                class="overflow-visible fill-gray-50"
+                            >
+                                <path
+                                    d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                                    stroke-width="0"
+                                />
+                            </svg>
+                            <rect
+                                width="100%"
+                                height="100%"
+                                stroke-width="0"
+                                fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+                    >
+                        <div
+                            class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+                        >
+                            <div class="lg:pr-4" >
+                                <div class="lg:max-w-lg">
+                                    <p
+                                        class="text-base font-semibold leading-7 text-secondary"
+                                    >
+                                        Asosiasi Klub Motor Bersatu Indonesia
+                                    </p>
+                                    <h1
+                                        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                                    >
+                                        A better workflow
+                                    </h1>
+                                    <p
+                                        class="mt-6 text-xl leading-8 text-gray-700"
+                                    >
+                                        Persatuan, kebersamaan, kejayaan.
+                                        Asosiasi Klub Motor Bersatu Indonesia
+                                        adalah satu keluarga yang siap beraksi
+                                        dan meraih prestasi bersama.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+                        >
+                            <div
+                                class="max-w-none rounded-2xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+                            >
+                                <iframe
+                                    width="800"
+                                    height="700"
+                                    src="https://www.youtube.com/embed/qbKxolwR3cA?si=SZEhVf47fXuZAn1z"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                            <!-- <img
+							class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+							src="../assets/img/profile.jpg"
+							alt=""
+						/> -->
+                        </div>
+                        <div
+                            class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+                        >
+                            <div class="lg:pr-4">
+                                <div
+                                    class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg"
+                                >
+                                    <p>
+                                        Saat Asosiasi Klub Motor Bersatu
+                                        Indonesia lahir, sebuah kisah baru
+                                        dimulai. Dari api semangat yang
+                                        berkobar, kami bersama-sama membangun
+                                        fondasi yang kokoh untuk persaudaraan,
+                                        prestasi, dan kebersamaan di dunia motor
+                                        Indonesia. Setiap langkah, setiap upaya,
+                                        membentuk jejak bersejarah yang akan
+                                        dikenang selamanya. Bersama, kami
+                                        menuliskan cerita kejayaan yang tak
+                                        terlupakan dalam perjalanan berdirinya
+                                        Asosiasi Klub Motor Bersatu Indonesia.
+                                    </p>
+                                    <ul
+                                        role="list"
+                                        class="mt-8 space-y-8 text-gray-600"
+                                    >
+                                        <li class="flex gap-x-3">
+                                            <i
+                                                class="fa-solid fa-motorcycle mt-1"
+                                            ></i>
+                                            <span
+                                                ><strong
+                                                    class="font-semibold text-gray-900"
+                                                    >Pengalaman
+                                                    Berjejaring.</strong
+                                                >
+                                                Asosiasi Klub Motor Bersatu
+                                                Indonesia memberikan kesempatan
+                                                untuk menjalin hubungan yang
+                                                erat dengan sesama pecinta motor
+                                                melalui berbagai kegiatan dan
+                                                acara yang diselenggarakan
+                                                secara berkala.</span
+                                            >
+                                        </li>
+                                        <li class="flex gap-x-3">
+                                            <i
+                                                class="fa-solid fa-road mt-1"
+                                            ></i>
+                                            <span
+                                                ><strong
+                                                    class="font-semibold text-gray-900"
+                                                    >Sumber Pengetahuan.</strong
+                                                >
+                                                Keanggotaan dalam asosiasi ini
+                                                memberikan akses ke berbagai
+                                                pengetahuan dan informasi
+                                                terkini seputar dunia motor,
+                                                mulai dari teknis mekanik hingga
+                                                perkembangan terbaru dalam
+                                                industri.</span
+                                            >
+                                        </li>
+                                        <li class="flex gap-x-3">
+                                            <i
+                                                class="fa-solid fa-hat-cowboy"
+                                            ></i>
+                                            <span
+                                                ><strong
+                                                    class="font-semibold text-gray-900"
+                                                    >Dukungan Komunitas.</strong
+                                                >
+                                                Anggota asosiasi mendapatkan
+                                                dukungan solid dari komunitasnya
+                                                dalam menjalani hobi dan minat
+                                                mereka terhadap motor, baik
+                                                dalam hal pengembangan diri
+                                                maupun dalam mengatasi tantangan
+                                                yang muncul di sepanjang
+                                                perjalanan mereka.</span
+                                            >
+                                        </li>
+                                    </ul>
+                                    <!-- <p class="mt-8">
+									Et vitae blandit facilisi magna lacus commodo.
+									Vitae sapien duis odio id et. Id blandit
+									molestie auctor fermentum dignissim. Lacus diam
+									tincidunt ac cursus in vel. Mauris varius
+									vulputate et ultrices hac adipiscing egestas.
+									Iaculis convallis ac tempor et ut. Ac lorem vel
+									integer orci.
+								</p>
+								<h2
+									class="mt-16 text-2xl font-bold tracking-tight text-gray-900"
+								>
+									No server? No problem.
+								</h2>
+								<p class="mt-6">
+									Id orci tellus laoreet id ac. Dolor, aenean leo,
+									ac etiam consequat in. Convallis arcu ipsum urna
+									nibh. Pharetra, euismod vitae interdum mauris
+									enim, consequat vulputate nibh. Maecenas
+									pellentesque id sed tellus mauris, ultrices
+									mauris. Tincidunt enim cursus ridiculus mi.
+									Pellentesque nam sed nullam sed diam turpis
+									ipsum eu a sed convallis diam.
+								</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PROFILE END -->
+                <!-- ABOUT US START -->
+                <div
+                    class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32"
+                    id="about-us"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+                        alt=""
+                        class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
+                    />
+                    <div
+                        class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+                        aria-hidden="true"
+                    >
+                        <div
+                            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                            style="
+                                clip-path: polygon(
+                                    74.1% 44.1%,
+                                    100% 61.6%,
+                                    97.5% 26.9%,
+                                    85.5% 0.1%,
+                                    80.7% 2%,
+                                    72.5% 32.5%,
+                                    60.2% 62.4%,
+                                    52.4% 68.1%,
+                                    47.5% 58.3%,
+                                    45.2% 34.5%,
+                                    27.5% 76.7%,
+                                    0.1% 64.9%,
+                                    17.9% 100%,
+                                    27.6% 76.8%,
+                                    76.1% 97.7%,
+                                    74.1% 44.1%
+                                );
+                            "
+                        ></div>
+                    </div>
+                    <div
+                        class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+                        aria-hidden="true"
+                    >
+                        <div
+                            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                            style="
+                                clip-path: polygon(
+                                    74.1% 44.1%,
+                                    100% 61.6%,
+                                    97.5% 26.9%,
+                                    85.5% 0.1%,
+                                    80.7% 2%,
+                                    72.5% 32.5%,
+                                    60.2% 62.4%,
+                                    52.4% 68.1%,
+                                    47.5% 58.3%,
+                                    45.2% 34.5%,
+                                    27.5% 76.7%,
+                                    0.1% 64.9%,
+                                    17.9% 100%,
+                                    27.6% 76.8%,
+                                    76.1% 97.7%,
+                                    74.1% 44.1%
+                                );
+                            "
+                        ></div>
+                    </div>
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div class="mx-auto max-w-2xl lg:mx-0">
+                            <h2
+                                class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+                            >
+                                Tentang Kami
+                            </h2>
+                            <p class="mt-6 text-lg leading-8 text-gray-300">
+                                Selamat datang di halaman 'Tentang Kami'
+                                Asosiasi Klub Motor Bersatu Indonesia! Kami
+                                adalah komunitas yang didedikasikan untuk
+                                mempersatukan pecinta motor dari berbagai
+                                kalangan di seluruh Indonesia. Dengan semangat
+                                persaudaraan dan kecintaan pada motor sebagai
+                                landasan, kami bertekad untuk menciptakan
+                                lingkungan yang inklusif, mendukung, dan
+                                inspiratif bagi semua anggota. Di sini, kami
+                                berbagi pengalaman, pengetahuan, serta
+                                menyediakan platform untuk pertumbuhan dan
+                                pengembangan bersama. Selamat bergabung dalam
+                                perjalanan kami yang penuh petualangan dan
+                                kebersamaan!
+                            </p>
+                        </div>
+                        <div
+                            class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none"
+                        >
+                            <div
+                                class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10"
+                            >
+                                <a href="#"
+                                    >Persatuan
+                                    <span aria-hidden="true">&rarr;</span></a
+                                >
+                                <a href="#"
+                                    >Kebersamaan
+                                    <span aria-hidden="true">&rarr;</span></a
+                                >
+                                <a href="#"
+                                    >Kejayaan
+                                    <span aria-hidden="true">&rarr;</span></a
+                                >
+                                <a href="#"
+                                    >Api yang Berkobar
+                                    <span aria-hidden="true">&rarr;</span></a
+                                >
+                            </div>
+                            <dl
+                                class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
+                            >
+                                <div class="flex flex-col-reverse">
+                                    <dt
+                                        class="text-base leading-7 text-gray-300"
+                                    >
+                                        Members
+                                    </dt>
+                                    <dd
+                                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                                    >
+                                        2000+
+                                    </dd>
+                                </div>
+                                <div class="flex flex-col-reverse">
+                                    <dt
+                                        class="text-base leading-7 text-gray-300"
+                                    >
+                                        Titik Lokasi Basecamp
+                                    </dt>
+                                    <dd
+                                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                                    >
+                                        300+
+                                    </dd>
+                                </div>
+                                <div class="flex flex-col-reverse">
+                                    <dt
+                                        class="text-base leading-7 text-gray-300"
+                                    >
+                                        Rute Petualangan yang dilalui
+                                    </dt>
+                                    <dd
+                                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                                    >
+                                        50+
+                                    </dd>
+                                </div>
+                                <div class="flex flex-col-reverse">
+                                    <dt
+                                        class="text-base leading-7 text-gray-300"
+                                    >
+                                        Donasi Tersalurkan
+                                    </dt>
+                                    <dd
+                                        class="text-2xl font-bold leading-9 tracking-tight text-white"
+                                    >
+                                        Rp 5.000.000.000 +
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!-- ABOUT US END -->
+                <!-- VISI MISI START -->
+                <div class="bg-white py-24 sm:py-32" id="visi-misi">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div class="mx-auto max-w-2xl lg:text-center">
+                            <h2 class="text-secondary font-semibold leading-7">
+                                Visi Misi
+                            </h2>
+                            <p
+                                class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                            >
+                                Asosiasi Klub Motor Bersatu Indonesia
+                            </p>
+                            <p class="mt-6 text-lg leading-8 text-gray-600">
+                                Menjadi pusat persatuan dan pengembangan
+                                komunitas pecinta motor terdepan di Indonesia,
+                                yang menginspirasi melalui semangat
+                                persaudaraan, kecintaan pada motor, dan
+                                kontribusi positif bagi masyarakat.
+                            </p>
+                        </div>
+                        <div
+                            class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl"
+                        >
+                            <dl
+                                class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
+                            >
+                                <div class="relative pl-16">
+                                    <dt
+                                        class="text-base font-semibold leading-7 text-gray-900"
+                                    >
+                                        <div
+                                            class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"
+                                        >
+                                            <i
+                                                class="fa-solid fa-motorcycle text-white"
+                                            ></i>
+                                        </div>
+                                        Membangun komunitas yang kuat
+                                    </dt>
+                                    <dd
+                                        class="mt-2 text-base leading-7 text-gray-600"
+                                    >
+                                        Menggalang persaudaraan di antara
+                                        anggota klub motor dengan mengadakan
+                                        acara, kegiatan, dan inisiatif yang
+                                        mempererat hubungan sosial dan
+                                        meningkatkan rasa kebersamaan
+                                    </dd>
+                                </div>
+                                <div class="relative pl-16">
+                                    <dt
+                                        class="text-base font-semibold leading-7 text-gray-900"
+                                    >
+                                        <div
+                                            class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"
+                                        >
+                                            <i
+                                                class="fa-solid fa-road text-white"
+                                            ></i>
+                                        </div>
+                                        Memajukan budaya berkendara yang aman
+                                        dan bertanggung jawab
+                                    </dt>
+                                    <dd
+                                        class="mt-2 text-base leading-7 text-gray-600"
+                                    >
+                                        Mengedukasi anggota dan masyarakat umum
+                                        tentang pentingnya keselamatan
+                                        berkendara, mempromosikan perilaku
+                                        berkendara yang bertanggung jawab, serta
+                                        mendukung kampanye keselamatan jalan
+                                        raya
+                                    </dd>
+                                </div>
+                                <div class="relative pl-16">
+                                    <dt
+                                        class="text-base font-semibold leading-7 text-gray-900"
+                                    >
+                                        <div
+                                            class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary"
+                                        >
+                                            <i
+                                                class="fa-solid fa-hat-cowboy text-white"
+                                            ></i>
+                                        </div>
+                                        Menjadi agen perubahan positif
+                                    </dt>
+                                    <dd
+                                        class="mt-2 text-base leading-7 text-gray-600"
+                                    >
+                                        Melalui berbagai program sosial dan
+                                        kegiatan amal, memberikan kontribusi
+                                        nyata bagi masyarakat sekitar, seperti
+                                        penggalangan dana untuk kegiatan sosial,
+                                        kampanye lingkungan, dan bantuan kepada
+                                        mereka yang membutuhkan
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!-- VISI MISI END -->
+                <!-- TAWARKAN & MEMBERSHIP START -->
+                <div class="bg-white py-24 sm:py-32" id="produk">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div class="mx-auto max-w-2xl sm:text-center">
+                            <h2
+                                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                            >
+                                Harga jelas, tanpa trik. Bergabung sekarang!
+                            </h2>
+                            <p class="mt-6 text-lg leading-8 text-gray-600">
+                                Gabunglah dengan keluarga besar Asosiasi Klub
+                                Motor Bersatu Indonesia dan rasakan kehangatan
+                                solidaritas serta kebersamaan yang abadi.
+                                Bersama-sama, kita akan mengukir sejarah,
+                                menjelajahi petualangan, dan merayakan kecintaan
+                                kita pada dunia motor. Bergabunglah sekarang dan
+                                jadilah bagian dari perjalanan tak terlupakan
+                                ini!
+                            </p>
+                        </div>
+                        <div
+                            class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none"
+                        >
+                            <div class="p-8 sm:p-10 lg:flex-auto">
+                                <h3
+                                    class="text-2xl font-bold tracking-tight text-gray-900"
+                                >
+                                    Lifetime membership
+                                </h3>
+                                <p
+                                    class="mt-6 text-base leading-7 text-gray-600"
+                                >
+                                    Bergabunglah sekarang dan nikmati manfaat
+                                    eksklusif Asosiasi Klub Motor Bersatu
+                                    Indonesia!
+                                </p>
+                                <div class="mt-10 flex items-center gap-x-4">
+                                    <h4
+                                        class="flex-none text-sm font-semibold leading-6 text-indigo-600"
+                                    >
+                                        What’s included
+                                    </h4>
+                                    <div
+                                        class="h-px flex-auto bg-gray-100"
+                                    ></div>
+                                </div>
+                                <ul
+                                    role="list"
+                                    class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+                                >
+                                    <li class="flex gap-x-3">
+                                        <svg
+                                            class="h-6 w-5 flex-none text-indigo-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Pendanaan Donasi Bermanfaat
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <svg
+                                            class="h-6 w-5 flex-none text-indigo-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Diskon anggota eksklusif untuk tour
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <svg
+                                            class="h-6 w-5 flex-none text-indigo-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Akses tanpa batas ke komunitas yang
+                                        solid dan mendukung
+                                    </li>
+                                    <li class="flex gap-x-3">
+                                        <svg
+                                            class="h-6 w-5 flex-none text-indigo-600"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        beli sekali, berguna selamanya
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0"
+                            >
+                                <div
+                                    class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16"
+                                >
+                                    <div class="mx-auto max-w-xs px-8">
+                                        <p
+                                            class="text-base font-semibold text-gray-600"
+                                        >
+                                            Bayar sekali, Anda memiliki
+                                            selamanya.
+                                        </p>
+                                        <p
+                                            class="mt-6 flex items-baseline justify-center gap-x-2"
+                                        >
+                                            <span
+                                                class="text-5xl font-bold tracking-tight text-gray-900"
+                                                >17.000.000</span
+                                            >
+                                            <!-- <span
+											class="text-sm font-semibold leading-6 tracking-wide text-gray-600"
+											>USD</span
+										> -->
+                                        </p>
+                                        <a
+                                            href="#"
+                                            class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                            >Get access</a
+                                        >
+                                        <p
+                                            class="mt-6 text-xs leading-5 text-gray-600"
+                                        >
+                                            Invoices and receipts available for
+                                            easy company reimbursement
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TAWARKAN & MEMBERSHIP END -->
+                <!-- PRODUK START -->
+                <div class="bg-white" id="produk_card">
+                    <div class="mx-auto max-w-2xl sm:text-center">
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                        >
+                            Produk Kita!
+                        </h2>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">
+                            Selamat datang di halaman produk kami! Temukan
+                            keanggotaan seumur hidup, merchandise eksklusif,
+                            tiket acara, panduan motor terbaik, perlengkapan
+                            keselamatan, serta kesempatan untuk memberi
+                            sumbangan amal.
+                        </p>
+                    </div>
+                    <div
+                        class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+                    >
+                        <h2 class="sr-only">Products</h2>
+
+                        <div
+                            class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
+                        >
+                            <a href="#" class="group">
+                                <div
+                                    class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                                >
+                                    <img
+                                        src="../assets/img/kaos.jpg"
+                                        alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                                        class="h-full w-full object-cover object-center group-hover:opacity-75"
+                                    />
+                                </div>
+                                <h3 class="mt-4 text-sm text-gray-700">
+                                    Kaos Ekslusif
+                                </h3>
+                                <p
+                                    class="mt-1 text-lg font-medium text-gray-900"
+                                >
+                                    Rp. 200.000
+                                </p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                                >
+                                    <img
+                                        src="../assets/img/invit.jpg"
+                                        alt="Olive drab green insulated bottle with flared screw lid and flat top."
+                                        class="h-full w-full object-cover object-center group-hover:opacity-75"
+                                    />
+                                </div>
+                                <h3 class="mt-4 text-sm text-gray-700">
+                                    Tiket Acara non member
+                                </h3>
+                                <p
+                                    class="mt-1 text-lg font-medium text-gray-900"
+                                >
+                                    Rp. 500.000
+                                </p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                                >
+                                    <img
+                                        src="../assets/img/invit.jpg"
+                                        alt="Olive drab green insulated bottle with flared screw lid and flat top."
+                                        class="h-full w-full object-cover object-center group-hover:opacity-75"
+                                    />
+                                </div>
+                                <h3 class="mt-4 text-sm text-gray-700">
+                                    Tiket Acara only membership
+                                </h3>
+                                <p
+                                    class="mt-1 text-lg font-medium text-gray-900"
+                                >
+                                    Rp. 50.000
+                                </p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                                >
+                                    <img
+                                        src="../assets/img/dana.jpg"
+                                        alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                                        class="h-full w-full object-cover object-center group-hover:opacity-75"
+                                    />
+                                </div>
+                                <h3 class="mt-4 text-sm text-gray-700">
+                                    Penggalangan Dana
+                                </h3>
+                                <p
+                                    class="mt-1 text-lg font-medium text-gray-900"
+                                >
+                                    Rp. 50.000
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUK END -->
+                <!-- KONTAK KAMI START -->
+                <div
+                    class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8"
+                    id="kontak"
+                >
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                        >
+                            Kontak Kami
+                        </h2>
+                        <p class="mt-2 text-lg leading-8 text-gray-600">
+                            Hubungi kami untuk informasi lebih lanjut atau
+                            pertanyaan. Kami siap membantu!.
+                        </p>
+                    </div>
+                    <form
+                        action="#"
+                        method="POST"
+                        class="mx-auto mt-16 max-w-xl sm:mt-20"
+                    >
+                        <div
+                            class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2"
+                        >
+                            <div>
+                                <label
+                                    for="first-name"
+                                    class="block text-sm font-semibold leading-6 text-gray-900"
+                                    >First name</label
+                                >
+                                <div class="mt-2.5">
+                                    <input
+                                        type="text"
+                                        name="first-name"
+                                        id="first-name"
+                                        autocomplete="given-name"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label
+                                    for="last-name"
+                                    class="block text-sm font-semibold leading-6 text-gray-900"
+                                    >Last name</label
+                                >
+                                <div class="mt-2.5">
+                                    <input
+                                        type="text"
+                                        name="last-name"
+                                        id="last-name"
+                                        autocomplete="family-name"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label
+                                    for="email"
+                                    class="block text-sm font-semibold leading-6 text-gray-900"
+                                    >Email</label
+                                >
+                                <div class="mt-2.5">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        autocomplete="email"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label
+                                    for="subject"
+                                    class="block text-sm font-semibold leading-6 text-gray-900"
+                                    >Subject</label
+                                >
+                                <div class="mt-2.5">
+                                    <input
+                                        type="subject"
+                                        name="subject"
+                                        id="subject"
+                                        autocomplete="subject"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label
+                                    for="message"
+                                    class="block text-sm font-semibold leading-6 text-gray-900"
+                                    >Message</label
+                                >
+                                <div class="mt-2.5">
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        rows="4"
+                                        class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <button
+                                type="submit"
+                                class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                Kirim!
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- KONTAK KAMI END -->
+                <!-- FOOTER START -->
+                <div class="">
+                    <div class="bg-base-200">
+                        <footer
+                            class="footer container mx-auto px-4 p-10 text-base-content"
+                        >
+                            <nav>
+                                <h6 class="footer-title">Services</h6>
+                                <a href="#produk_card" class="link link-hover"
+                                    >Produk</a
+                                >
+                                <a href="#produk" class="link link-hover">Membership</a>
+                                <a href="../view/event.html" class="link link-hover">Event</a>
+                                <a href="../view/gallery.html" class="link link-hover">Gallery</a>
+                            </nav>
+                            <nav>
+                                <h6 class="footer-title">Company</h6>
+                                <a href="#profil" class="link link-hover"
+                                    >Profil</a
+                                >
+                                <a href="#about_us" class="link link-hover"
+                                    >Tentang Kami</a
+                                >
+                                <a href="#visi-misi" class="link link-hover"
+                                    >Visi Misi</a
+                                >
+                                <a href="../view/klien.html" class="link link-hover"
+                                    >Klien Kami</a
+                                >
+                            </nav>
+                            <nav>
+                                <h6 class="footer-title">Legal</h6>
+                                <a class="link link-hover">Terms of use</a>
+                                <a class="link link-hover">Privacy policy</a>
+                                <a class="link link-hover">Cookie policy</a>
+                            </nav>
+                        </footer>
+                    </div>
+                    <footer
+                        class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300"
+                    >
+                        <aside class="items-center grid-flow-col">
+                            <img
+                                src="../assets/img/logo.png"
+                                class="w-20"
+                                alt=""
+                            />
+                            <p>
+                                Asosiasi Klub Motor Bersatu Indonesia Ltd.
+                                <br />Providing reliable motors since 2000
+                            </p>
+                        </aside>
+                        <nav class="md:place-self-center md:justify-self-end">
+                            <div class="grid grid-flow-col gap-4">
+                                <a class="btn">
+                                    <i
+                                        class="fa-brands fa-twitter text-2xl"
+                                    ></i>
+                                </a>
+                                <a class="btn">
+                                    <i
+                                        class="fa-brands fa-youtube text-2xl"
+                                    ></i>
+                                </a>
+                                <a class="btn">
+                                    <i
+                                        class="fa-brands fa-facebook text-2xl"
+                                    ></i>
+                                </a>
+                            </div>
+                        </nav>
+                    </footer>
+                </div>
+                <!-- FOOTER END -->
+            </div>
+        </div>
+
+        <!-- script -->
+        <script
+            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+            defer
+        ></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

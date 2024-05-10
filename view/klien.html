@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="garden">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.10.3/dist/full.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <link
+            rel="stylesheet"
+            href="../assets/fontawesome/css/fontawesome.css"
+        />
+        <link rel="stylesheet" href="../assets/fontawesome/css/brands.css" />
+        <link rel="stylesheet" href="../assets/fontawesome/css/solid.css" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<body>
+	<!-- component -->
+        <div
+            class="md:flex flex-col md:flex-row md:min-h-screen w-full fixed top-0 left-0 right-0"
+        >
+            <!-- SIDEBAR START -->
+            <div
+                @click.away="open = false"
+                class="flex flex-col w-full md:w-64 flex-shrink-0"
+                x-data="{ open: false }"
+            >
+                <div
+                    class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between"
+                >
+                    <a
+                        href="#"
+                        class="text-lg font-semibold tracking-widest uppercase rounded-lg"
+                    >
+                        <div class="hidden md:block lg:block">
+                            <img
+                                src="../assets/img/logo.png"
+                                alt=""
+                                class="hidden md:block lg:block rounded-full"
+                            />
+                        </div>
+                        <h2 class="text-center md:mt-10 md:hidden w-full">
+                            Asosiasi Klub Motor Bersatu Indonesia
+                        </h2>
+                    </a>
+
+                    <button
+                        class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+                        @click="open = !open"
+                    >
+                        <svg
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            class="w-6 h-6"
+                        >
+                            <path
+                                x-show="!open"
+                                fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                clip-rule="evenodd"
+                            ></path>
+                            <path
+                                x-show="open"
+                                fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav
+                    :class="{'block': open, 'hidden': !open}"
+                    class="flex-grow md:block px-4 pb-4 md:pb-0 shadow-md shadow-inner"
+                >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/index.html"
+                        >Home</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/gallery.html"
+                        >Gallery</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/event.html"
+                        >Event</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold x bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/klien.html"
+                        >Klien Kami</a
+                    >
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold x bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        href="../view/artikel.html"
+                        >Artikel</a
+                    >
+                    <!-- <div
+                        @click.away="open = false"
+                        class="relative"
+                        x-data="{ open: false }"
+                    >
+                        <button
+                            @click="open = !open"
+                            class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                        >
+                            <span>Login</span>
+                            <svg
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                :class="{'rotate-180': open, 'rotate-0': !open}"
+                                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div
+                            x-show="open"
+                            x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg"
+                        >
+                            <div
+                                class="px-2 py-2 rounded-md shadow dark-mode:bg-gray-800"
+                            >
+                                <a
+                                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white md:mt-0 hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                                    href="#"
+                                    >Sign Up</a
+                                >
+                                <a
+                                    class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white md:mt-0 hover:text-white focus:text-white hover:bg-gray-500 focus:bg-gray-500 focus:outline-none focus:shadow-outline"
+                                    href="#"
+                                    >Sign In</a
+                                >
+                            </div>
+                        </div>
+                    </div> -->
+                </nav>
+            </div>
+            <!-- SIDEBAR START -->
+
+            <div class="h-screen w-screen" style="overflow-y: auto">
+                <!-- NAVBAR START -->
+                <img
+                    src="../assets/img/Asosiasi Klub Motor Bersatu Indonesia.png"
+                    alt=""
+                    class="w-full h-auto h-auto bg-cover flex justify-center"
+                />
+                <div class="shadow-md sticky top-0 z-40 -mx-6 bg-neutral">
+                    <div
+                        class="font-bold flex justify-between md:mx-6 p-4 px-8 sm:text-center text-[10px] text-nowrap md:text-sm text-white"
+                    >
+                        <a
+                            href="http://localhost/club_motor/view/index.html#profil"
+                            class="rounded-lg block px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Profil</a
+                        >
+                        <a
+                            href="http://localhost/club_motor/view/index.html#visi-misi"
+                            class="rounded-lg block px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Visi Misi</a
+                        >
+                        <a
+                            href="http://localhost/club_motor/view/index.html#produk"
+                            class="rounded-lg block px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Produk Kami</a
+                        >
+                        <a
+                            href="http://localhost/club_motor/view/index.html#kontak"
+                            class="rounded-lg block px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Kontak Kami</a
+                        >
+                        <a
+                            href="http://localhost/club_motor/view/index.html#about-us"
+                            class="rounded-lg block px-4 py-2 focus:bg-white focus:outline-none focus:shadow-outline"
+                            >Tentang Kami</a
+                        >
+                    </div>
+                </div>
+                <!-- NAVBAR END -->
+                <!-- KLIEN START -->
+				<div class="bg-white py-24 sm:py-32">
+				<div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+					<div class="max-w-2xl">
+					<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Bertemu dengan Klien Kami</h2>
+					<p class="mt-6 text-lg leading-8 text-gray-600">Bertemu dengan klien kami: langkah penting untuk memahami dan melayani mereka dengan lebih baik.</p>
+					</div>
+					<ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">Influencer</p>
+						</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">Content Creator</p>
+						</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">Pro Scene</p>
+						</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">Software Developer</p>
+						</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">Content Creator</p>
+						</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">CEO Mango Phone</p>
+						</div>
+						</div>
+					</li>
+					<li>
+						<div class="flex items-center gap-x-6">
+						<img class="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						<div>
+							<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leslie Alexander</h3>
+							<p class="text-sm font-semibold leading-6 text-indigo-600">CEO Arduino</p>
+						</div>
+						</div>
+					</li>
+
+					<!-- More people... -->
+					</ul>
+				</div>
+				</div>
+                <!-- KLIEN END -->
+				<!-- TESTIMONIAL START -->
+				<div class="mx-auto sm:text-center bg-white">
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                        >
+                            Testimoni
+                        </h2>
+                    </div>
+				<section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+					<div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+					<div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+					<div class="mx-auto max-w-2xl lg:max-w-4xl">
+						<img class="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="">
+						<figure class="mt-10">
+						<blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+							<p>“Saya telah menjadi anggota Asosiasi Klub Motor Bersatu Indonesia selama bertahun-tahun, dan pengalaman ini benar-benar luar biasa. Dari mendukung amal hingga mendapatkan diskon eksklusif untuk petualangan kami, keanggotaan seumur hidup ini telah menjadi investasi terbaik bagi saya. Komunitas yang solid dan keragaman acara yang ditawarkan membuat setiap hari berkendara menjadi petualangan yang tidak terlupakan..”</p>
+						</blockquote>
+						<figcaption class="mt-10">
+							<img class="mx-auto h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+							<div class="mt-4 flex items-center justify-center space-x-3 text-base">
+							<div class="font-semibold text-gray-900">Judith Black</div>
+							<svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+								<circle cx="1" cy="1" r="1" />
+							</svg>
+							<div class="text-gray-600">Influencer</div>
+							</div>
+						</figcaption>
+						</figure>
+					</div>
+				</section>
+				<section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+					<div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+					<div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+					<div class="mx-auto max-w-2xl lg:max-w-4xl">
+						<img class="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="">
+						<figure class="mt-10">
+						<blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+							<p>“Sebagai anggota setia Asosiasi Klub Motor Bersatu Indonesia selama bertahun-tahun, saya bisa dengan yakin mengatakan bahwa keanggotaan seumur hidup ini adalah keputusan terbaik yang pernah saya buat. Dukungan yang luar biasa dari komunitas kami, akses tanpa batas ke acara-acara menarik, dan kemungkinan berkontribusi pada amal membuat setiap hari bersama kami penuh dengan kegembiraan.”</p>
+						</blockquote>
+						<figcaption class="mt-10">
+							<img class="mx-auto h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+							<div class="mt-4 flex items-center justify-center space-x-3 text-base">
+							<div class="font-semibold text-gray-900">Judith Black</div>
+							<svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+								<circle cx="1" cy="1" r="1" />
+							</svg>
+							<div class="text-gray-600">Content Creator</div>
+							</div>
+						</figcaption>
+						</figure>
+					</div>
+				</section>
+
+				<!-- TESTIMONIAL END -->
+				<!-- FOOTER START -->
+                <div class="">
+                    <div class="bg-base-200">
+                        <footer
+                            class="footer container mx-auto px-4 p-10 text-base-content"
+                        >
+                            <nav>
+                                <h6 class="footer-title">Services</h6>
+                                <a href="../view/index.html#produk_card" class="link link-hover"
+                                    >Produk</a
+                                >
+                                <a href="../view/index.html#produk" class="link link-hover">Membership</a>
+                                <a href="../view/event.html" class="link link-hover">Event</a>
+                                <a href="../view/gallery.html" class="link link-hover">Gallery</a>
+                            </nav>
+                            <nav>
+                                <h6 class="footer-title">Company</h6>
+                                <a href="../view/index.html#profil" class="link link-hover"
+                                    >Profil</a
+                                >
+                                <a href="../view/index.html#about_us" class="link link-hover"
+                                    >Tentang Kami</a
+                                >
+                                <a href="../view/index.html#visi-misi" class="link link-hover"
+                                    >Visi Misi</a
+                                >
+                                <a href="../view/klien.html" class="link link-hover"
+                                    >Klien Kami</a
+                                >
+                            </nav>
+                            <nav>
+                                <h6 class="footer-title">Legal</h6>
+                                <a class="link link-hover">Terms of use</a>
+                                <a class="link link-hover">Privacy policy</a>
+                                <a class="link link-hover">Cookie policy</a>
+                            </nav>
+                        </footer>
+                    </div>
+                    <footer
+                        class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300"
+                    >
+                        <aside class="items-center grid-flow-col">
+                            <img
+                                src="../assets/img/logo.png"
+                                class="w-20"
+                                alt=""
+                            />
+                            <p>
+                                Asosiasi Klub Motor Bersatu Indonesia Ltd.
+                                <br />Providing reliable motors since 2000
+                            </p>
+                        </aside>
+                        <nav class="md:place-self-center md:justify-self-end">
+                            <div class="grid grid-flow-col gap-4">
+                                <a class="btn">
+                                    <i
+                                        class="fa-brands fa-twitter text-2xl"
+                                    ></i>
+                                </a>
+                                <a class="btn">
+                                    <i
+                                        class="fa-brands fa-youtube text-2xl"
+                                    ></i>
+                                </a>
+                                <a class="btn">
+                                    <i
+                                        class="fa-brands fa-facebook text-2xl"
+                                    ></i>
+                                </a>
+                            </div>
+                        </nav>
+                    </footer>
+                </div>
+                <!-- FOOTER END -->
+            </div>
+        </div>
+
+        <!-- script -->
+        <script
+            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+            defer
+        ></script>
+</body>
+</html>
